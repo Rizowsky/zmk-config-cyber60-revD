@@ -22,41 +22,52 @@
         bt1_macro_mac: bt1_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 1 &bt BT_SEL 0>;
+            bindings = <&to 0 &bt BT_SEL 0>;
             label = "BT1_MACRO";
         };
 
         bt_macro_ipad: bt_macro_ipad {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 1 &bt BT_SEL 1>;
+            bindings = <&to 0 &bt BT_SEL 1>;
             label = "BT_MACRO_IPAD";
         };
 
         bt_macro_iphone: bt_macro_iphone {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 1 &bt BT_SEL 2>;
+            bindings = <&to 0 &bt BT_SEL 2>;
             label = "BT_MACRO_IPHONE";
         };
 
-        bt_macro_temp: bt_macro_win {
+        bt_macro_temp: bt_macro_temp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &bt BT_SEL 3>;
-            label = "BT_MACRO_WIN";
+            bindings = <&to 1 &bt BT_SEL 3>;
+            label = "BT_MACRO_TEMP";
         };
 
         bt_macro_win: bt_macro_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &bt BT_SEL 4>;
+            bindings = <&to 1 &bt BT_SEL 3>;
             label = "BT_MACRO_WIN";
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
+
+        mac {
+            bindings = <
+&kp ESC            &kp N1            &kp N2    &kp N3     &kp N4     &kp N5     &kp N6  &kp N7                    &kp N8                        &kp N9                         &kp N0    &kp MINUS  &kp EQUAL                 &kp BACKSPACE  &kp DELETE
+&kp TAB            &kp Q             &kp W     &kp E      &kp R      &kp T      &kp Y   &kp U                     &kp I                         &kp O                          &kp P     &kp LBKT   &kp RBKT                  &kp BSLH
+&mo_kp 2 CAPSLOCK  &kp A             &kp S     &kp D      &kp F      &kp G      &kp H   &kp J                     &kp K                         &kp L                          &kp SEMI  &kp SQT    &none                     &kp RET
+&kp LSHFT          &none             &kp Z     &kp X      &kp C      &kp V      &kp B   &kp N                     &kp M                         &kp COMMA                      &kp DOT   &kp FSLH   &mt RIGHT_SHIFT UP_ARROW  &mo 3
+&kp LEFT_COMMAND   &kp LEFT_CONTROL  &kp LALT  &kp SPACE  &kp SPACE  &kp SPACE  &none   &mt RIGHT_ALT LEFT_ARROW  &mt RIGHT_COMMAND DOWN_ARROW  &mt RIGHT_CONTROL RIGHT_ARROW
+&none
+            >;
+        };
 
         win {
             // Base layer
@@ -74,17 +85,6 @@
 &mo_kp 2 CAPSLOCK  &kp A             &kp S     &kp D      &kp F      &kp G      &kp H   &kp J                     &kp K                         &kp L                          &kp SEMI  &kp SQT    &none                     &kp RET
 &kp LSHFT          &none             &kp Z     &kp X      &kp C      &kp V      &kp B   &kp N                     &kp M                         &kp COMMA                      &kp DOT   &kp FSLH   &mt RIGHT_SHIFT UP_ARROW  &mo 3
 &kp LCTRL          &kp LEFT_COMMAND  &kp LALT  &kp SPACE  &kp SPACE  &kp SPACE  &none   &mt RIGHT_ALT LEFT_ARROW  &mt RIGHT_COMMAND DOWN_ARROW  &mt RIGHT_CONTROL RIGHT_ARROW
-&none
-            >;
-        };
-
-        mac {
-            bindings = <
-&kp ESC            &kp N1            &kp N2    &kp N3     &kp N4     &kp N5     &kp N6  &kp N7                    &kp N8                        &kp N9                         &kp N0    &kp MINUS  &kp EQUAL                 &kp BACKSPACE  &kp DELETE
-&kp TAB            &kp Q             &kp W     &kp E      &kp R      &kp T      &kp Y   &kp U                     &kp I                         &kp O                          &kp P     &kp LBKT   &kp RBKT                  &kp BSLH
-&mo_kp 2 CAPSLOCK  &kp A             &kp S     &kp D      &kp F      &kp G      &kp H   &kp J                     &kp K                         &kp L                          &kp SEMI  &kp SQT    &none                     &kp RET
-&kp LSHFT          &none             &kp Z     &kp X      &kp C      &kp V      &kp B   &kp N                     &kp M                         &kp COMMA                      &kp DOT   &kp FSLH   &mt RIGHT_SHIFT UP_ARROW  &mo 3
-&kp LEFT_COMMAND   &kp LEFT_CONTROL  &kp LALT  &kp SPACE  &kp SPACE  &kp SPACE  &none   &mt RIGHT_ALT LEFT_ARROW  &mt RIGHT_COMMAND DOWN_ARROW  &mt RIGHT_CONTROL RIGHT_ARROW
 &none
             >;
         };
