@@ -50,8 +50,8 @@
         compatible = "pwm-buzzer";
 		pwms = <&pwm0 0 1000 PWM_POLARITY_NORMAL>;
 		//set status = "okay" to enable the buzzer
-		status = "disabled";
-		//status = "okay";
+		//status = "disabled";
+		status = "okay";
     };
 
 	leds {
